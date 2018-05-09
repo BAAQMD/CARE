@@ -1,0 +1,53 @@
+#
+# remake.yml for `CARE` package (DATA ONLY)
+#
+
+packages:
+  - tidyverse
+  - purrr
+  - memoise
+  - strtools
+  - tbltools
+  - geotools
+
+sources:
+  - data-raw/make_CARE_region_geodata.R
+  - data-raw/make_deprecated_datasets.R
+
+targets:
+
+  all:
+    depends:
+      data
+
+  data:
+    depends:
+      - data/CARE_region_geodata.rda
+      - data/CARE_impact_regions.rda
+      - data/CARE_exceedance_regions.rda
+
+  data/CARE_region_geodata.rda:
+    command: use_data(CARE_region_geodata, overwrite = TRUE)
+
+  CARE_region_geodata:
+    cleanup_level: clean
+    command: make_CARE_region_geodata(CARE_impact_spdf, CARE_exceedance_spdf)
+
+  CARE_exceedance_spdf:
+    cleanup_level: clean
+    command: make_CARE_exceedance_spdf("data-raw/kmz/O3_PM_Exceedance_Areas.kmz", CARE_impact_spdf)
+
+  CARE_impact_spdf:
+    cleanup_level: clean
+    command: make_CARE_impact_spdf("data-raw/kmz/CARE_2013_Cumulative_Impact_Areas.kmz")
+
+  # Deprecated in favor of `CARE_region_geodata`
+  data/CARE_impact_regions.rda:
+    cleanup_level: tidy
+    command: make_CARE_impact_regions()
+
+  # Deprecated in favor of `CARE_region_geodata`
+  data/CARE_exceedance_regions.rda:
+    cleanup_level: tidy
+    command: make_CARE_exceedance_regions()
+

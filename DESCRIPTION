@@ -1,0 +1,24 @@
+Package: CARE
+Type: Package
+Title: CARE Program Datasets and Tools
+Version: 2018.05.09
+Author: David Holstius
+Maintainer: David Holstius <dholstius@baaqmd.gov>
+Depends:
+  tidyverse,
+  geotools
+Suggests:
+  census,
+  testthat,
+  mapview,
+  inventory
+Imports:
+  TIGER2015,
+  strtools
+Description: Provides CARE program datasets and tools.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Roxygen: list(markdown = TRUE)
+VignetteBuilder: knitr
