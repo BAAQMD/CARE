@@ -1,7 +1,7 @@
 Package: CARE
 Type: Package
 Title: CARE Program Datasets and Tools
-Version: 2018.05.09
+Version: 2018.05.10
 Author: David Holstius
 Maintainer: David Holstius <dholstius@baaqmd.gov>
 Depends:
