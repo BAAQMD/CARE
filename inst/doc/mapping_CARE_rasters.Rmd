@@ -7,7 +7,7 @@ output:
 editor_options:
   chunk_output_type: console
 vignette: >
-  %\VignetteIndexEntry{Mapping CARE Regions}
+  %\VignetteIndexEntry{Mapping 1km cancer risk with leaflet}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 ---
@@ -44,8 +44,6 @@ ll_basemap <-
   leaflet() %>% 
   addProviderTiles("Stamen.TonerLite") %>% 
   setViewBayArea(zoom = 9)
-
-show(ll_basemap)
 ```
 
 ```{r final_map}

@@ -27,8 +27,6 @@ ll_basemap <-
   addProviderTiles("Stamen.TonerLite") %>% 
   setViewBayArea(zoom = 9)
 
-show(ll_basemap)
-
 ## ----final_map-----------------------------------------------------------
 # Finally, add the raster as a layer on top of the basemap.
 # Give it a nice perceptually uniform colormap (viridis::plasma)

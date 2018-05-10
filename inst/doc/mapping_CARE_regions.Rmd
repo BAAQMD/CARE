@@ -7,7 +7,7 @@ output:
 editor_options:
   chunk_output_type: console
 vignette: >
-  %\VignetteIndexEntry{Mapping CARE Regions}
+  %\VignetteIndexEntry{Mapping impact and exceedance polygons with mapview}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 ---
