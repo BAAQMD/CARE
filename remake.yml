@@ -9,10 +9,12 @@ packages:
   - strtools
   - tbltools
   - geotools
+  - inventory
 
 sources:
   - data-raw/make_CARE_region_geodata.R
   - data-raw/make_deprecated_datasets.R
+  - data-raw/make_CARE_gridded_geodata.R
 
 targets:
 
@@ -22,12 +24,19 @@ targets:
 
   data:
     depends:
+      - data/CARE_1km_cancer_risk.rda
       - data/CARE_region_geodata.rda
       - data/CARE_impact_regions.rda
       - data/CARE_exceedance_regions.rda
 
+  data/CARE_1km_cancer_risk.rda:
+    command: use_data(CARE_1km_cancer_risk, overwrite = TRUE)
+
   data/CARE_region_geodata.rda:
     command: use_data(CARE_region_geodata, overwrite = TRUE)
+
+  CARE_1km_cancer_risk:
+    command: make_CARE_1km_cancer_risk("data-raw/gridded/Gridded_1km_CancerRisk15.xlsx")
 
   CARE_region_geodata:
     cleanup_level: clean
