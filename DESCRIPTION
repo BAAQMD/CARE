@@ -6,12 +6,15 @@ Author: David Holstius
 Maintainer: David Holstius <dholstius@baaqmd.gov>
 Depends:
   tidyverse,
-  geotools
+  sp,
+  sf
 Suggests:
   census,
   testthat,
   mapview,
-  inventory
+  inventory,
+  geotools,
+  purrr
 Imports:
   TIGER2015,
   strtools
