@@ -15,6 +15,10 @@ Suggests:
 Imports:
   TIGER2015,
   strtools
+Remotes:
+  github::BAAQMD/geotools,
+  github::BAAQMD/TIGER2015,
+  github::BAAQMD/strtools
 Description: Provides CARE program datasets and tools.
 License: MIT
 Encoding: UTF-8
